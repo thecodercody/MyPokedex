@@ -1,4 +1,4 @@
-# poke-test
+# poké-test
 Single Page app Using Pokémon API
 
 # Requirements.
