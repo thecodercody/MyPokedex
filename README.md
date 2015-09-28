@@ -1,5 +1,5 @@
 # poké-test
-Single Page app Using Pokémon API
+Single Page app Using Pokémon API.  Please fork this repo, and create your app.  When you are done, create a Pull Request.
 
 # Requirements.
 
