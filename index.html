@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Pokedex</title>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-app="pokeApp" ng-controller="MainCtrl">
+    <div ng-repeat="poke in pokemon">
+      {{ poke }}
+    </div>
+</html>
