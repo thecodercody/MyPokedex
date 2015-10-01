@@ -6,10 +6,25 @@
     <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="js/controllers/DetailsCtrl.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
-  <body ng-app="pokeApp" ng-controller="MainCtrl">
-    <div ng-repeat="poke in pokemon">
-      {{ poke }}
+  <body ng-app="pokeApp">
+    <div ng-controller="MainCtrl">  
+      <input type="search" ng-model="q" placeholder="find pokemon..." aria-label="find pokemon" />
+      <ul class="pokedex">
+        <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
+          <a ng-href="/{{pokemon.name}}">{{ pokemon.name }}</a>
+        </li>
+        <li class="animate-repeat" ng-if="results.length == 0">
+          <strong>No results found...</strong>
+        </li>
+      </ul>
     </div>
+    <div ng-controller="DetailsCtrl">
+      <div ng-view>
+        <h1>{{ pokemon.pokedex }}</h1>
+      </div>
+    </div>
+  </body>
 </html>
