@@ -19,7 +19,7 @@
         <ul class="pokedex">
           <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
             <strong>{{ pokemon.name }}</strong>
-              <img class="pokeballs" src="img/pokeball.png" ng-click="pokemonDetails(pokemon);">
+              <img id="{{pokemon.name}}" class="pokeballs" src="img/pokeball.png" ng-click="pokemonDetails(pokemon);">
           </li>
           <li ng-if="results.length == 0">
             <strong>No results found...</strong>

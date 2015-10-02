@@ -4,10 +4,11 @@ angular.module('pokeApp').controller('DetailsCtrl', ['$scope', 'appFact', functi
       $scope.attack = appFact.pokemon.attack;
       $scope.defense = appFact.pokemon.defense;
       $scope.name = appFact.pokemon.name;
+      $scope.$apply();
     }
   };
 
 
-  setInterval(setAttr, 500);
+  setInterval(setAttr, 1000);
 
 }]);

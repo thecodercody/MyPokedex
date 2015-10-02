@@ -12,9 +12,13 @@ angular.module('pokeApp', ['ngRoute'])
     },
     error: function(data) {
       console.log('Error: Message not retrieved.');
-    }
-  });
+     }
+    });
+
   $scope.pokemonDetails = function(poke){
+    $('#' + poke.name).addClass('pokeballs-opening');
+    console.log('#' + poke.name);
+
     var uri = poke.resource_uri;
     $.ajax({
     url: 'http://pokeapi.co/' + uri,
@@ -26,7 +30,7 @@ angular.module('pokeApp', ['ngRoute'])
     error: function(data) {
       console.log('Error: Message not retrieved.');
     }
-  });
+    });
   };
 }]);
 
