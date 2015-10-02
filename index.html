@@ -12,22 +12,23 @@
     
   </head>
   <body ng-app="pokeApp">
-    <div ng-controller="MainCtrl">  
-      <input type="search" ng-model="q" placeholder="find pokemon..." aria-label="find pokemon" />
-      <ul class="pokedex">
-        <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
-          <a ng-click=pokemonDetails(pokemon)>{{ pokemon.name }}</a>
-        </li>
-        <li class="animate-repeat" ng-if="results.length == 0">
-          <strong>No results found...</strong>
-        </li>
-      </ul>
-    </div>
-    <div ng-controller="DetailsCtrl">
-      <h1>{{ attack }}</h1>
-      <div ng-view>
+      <div id="sidebar" ng-controller="MainCtrl">  
+        <img src="img/pokedex.png">
+        <input type="search" ng-model="q" placeholder="find pokemon..." aria-label="find pokemon" />
+        <ul class="pokedex">
+          <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
+            <a ng-click=pokemonDetails(pokemon)>{{ pokemon.name }}</a><img class="pokeballs" src="img/pokeball.png"/>
+          </li>
+          <li ng-if="results.length == 0">
+            <strong>No results found...</strong>
+          </li>
+        </ul>
       </div>
-    </div>
+      <div class="details" ng-controller="DetailsCtrl">
+        <h1>{{ attack }}</h1>
+        <div ng-view>
+        </div>
+      </div>
 
     
   </body>
