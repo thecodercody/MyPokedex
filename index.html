@@ -8,20 +8,18 @@
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="js/controllers/DetailsCtrl.js"></script>
+    <script type="text/javascript" src="js/DetailsCtrl.js"></script>
     
   </head>
   <body ng-app="pokeApp">
-      <div id="sidebar" ng-controller="MainCtrl">  
+      <div id="leftSidebar" ng-controller="MainCtrl">  
         <p><img src="img/pokedex.png">
         <br>
         <input id="search" type="search" ng-model="q" placeholder="find pokemon..." aria-label="find pokemon" />
         <ul class="pokedex">
           <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
             <strong>{{ pokemon.name }}</strong>
-            <a ng-click=pokemonDetails(pokemon)>
-              <img class="pokeballs" src="img/pokeball.png"/>
-            </a>
+              <img class="pokeballs" src="img/pokeball.png" ng-click="pokemonDetails(pokemon);">
           </li>
           <li ng-if="results.length == 0">
             <strong>No results found...</strong>
@@ -29,15 +27,21 @@
         </ul></p>
       </div>
         <div class="details" ng-controller="DetailsCtrl">
-          <div id="col-1"></div>
-          <div id="col-2"> 
             <h2 class="stats">Name: {{ name }}</h2><br>
             <h2 class="stats">Attack Power: {{ attack }}</h2><br>
             <h2 class="stats">Defense Power: {{ defense }}</h2>
-          </div>
           <div ng-view>
           </div>
         </div>
-    
+        <div id="rightSidebar">
+          <div> 
+            <p><img id="logo" src="img/logo.png"/></p>
+            <p><h3 id="text" class="right">No Pokemon were harmed in the making of this app</h3></p>
+          </div>
+          <br>
+          <br>
+          <br>
+          <p><h3 class="right" id="signature">-thecodercody-</h3></p>
+        </div>
   </body>
 </html>

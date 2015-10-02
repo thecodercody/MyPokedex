@@ -16,14 +16,12 @@ angular.module('pokeApp', ['ngRoute'])
   });
   $scope.pokemonDetails = function(poke){
     var uri = poke.resource_uri;
-    console.log(uri);
     $.ajax({
     url: 'http://pokeapi.co/' + uri,
     type: "GET",
     contentType: 'application/json',
     success: function (data) {
       appFact.pokemon = data;
-      console.log(appFact.pokemon.attack);
     },
     error: function(data) {
       console.log('Error: Message not retrieved.');
