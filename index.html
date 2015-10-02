@@ -3,13 +3,20 @@
   <head>
     <title>Pokedex</title>
     <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/controllers/DetailsCtrl.js"></script>
+    
   </head>
   <body ng-app="pokeApp">
     <div ng-controller="MainCtrl">  
       <input type="search" ng-model="q" placeholder="find pokemon..." aria-label="find pokemon" />
       <ul class="pokedex">
         <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
-          <a ng-href="/{{pokemon.name}}">{{ pokemon.name }}</a>
+          <a ng-click=pokemonDetails(pokemon)>{{ pokemon.name }}</a>
         </li>
         <li class="animate-repeat" ng-if="results.length == 0">
           <strong>No results found...</strong>
@@ -17,15 +24,11 @@
       </ul>
     </div>
     <div ng-controller="DetailsCtrl">
+      <h1>{{ attack }}</h1>
       <div ng-view>
-        <h1>{{ pokemon.pokedex }}</h1>
       </div>
     </div>
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
-    <script type="text/javascript" src="js/controllers/DetailsCtrl.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+
+    
   </body>
 </html>
