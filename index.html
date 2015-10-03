@@ -28,9 +28,9 @@
         </ul></p>
       </div>
         <div class="details" ng-controller="DetailsCtrl">
-            <h2 class="stats">Name: {{ name }}</h2><br>
-            <h2 class="stats">Attack Power: {{ attack }}</h2><br>
-            <h2 class="stats">Defense Power: {{ defense }}</h2>
+            <h2 class="stats">Name: <span class="varStats">{{ name }}</span></h2><br>
+            <h2 class="stats">Attack Power: <span class="varStats">{{ attack }}</span></h2><br>
+            <h2 class="stats">Defense Power: <span class="varStats">{{ defense }}</span></h2>
             <div class="popup">
               <div id="popupText"></div>  
               <svg height="50" width="100">
@@ -38,7 +38,7 @@
                 Sorry, your browser does not support inline SVG.
               </svg>
             </div>
-            <img id="ash" src="img/ashImage.png"/>
+            <img id="ash" src="img/ashSmall.png"/>
         </div>
         <div id="rightSidebar">
           <div> 
