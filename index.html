@@ -6,14 +6,16 @@
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="js/DetailsCtrl.js"></script>
     
   </head>
   <body ng-app="pokeApp">
       <div id="leftSidebar" ng-controller="MainCtrl">  
-        <p><img src="img/pokedex.png">
+        <p>
+        <div class="ids">
+          <h2></h2>
+        </div>
         <br>
         <input id="search" type="search" ng-model="q" placeholder="find pokemon..." aria-label="find pokemon" />
         <ul class="pokedex">
@@ -30,6 +32,13 @@
             <h2 class="stats">Name: {{ name }}</h2><br>
             <h2 class="stats">Attack Power: {{ attack }}</h2><br>
             <h2 class="stats">Defense Power: {{ defense }}</h2>
+            <div class="popup">
+              <div id="popupText">Hello World!</div>  
+              <svg height="50" width="100">
+                <path d="M0 50 L40 0 L65 0 Z" />
+                Sorry, your browser does not support inline SVG.
+              </svg>
+            </div>
           <div ng-view>
           </div>
         </div>
