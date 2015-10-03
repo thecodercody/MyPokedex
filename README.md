@@ -1,3 +1,9 @@
+HOW TO USE:
+
+  Fork and clone repo.  Do a "bower install" from the root directory, then open index.html in a
+  browser and enjoy!
+
+
 # poké-test
 Single Page app Using Pokémon API.  Please fork this repo, and create your app.  When you are done, create a Pull Request.
 
