@@ -6,10 +6,17 @@
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/DetailsCtrl.js"></script>
   </head>
   <body ng-app="pokeApp">
+    <audio autoplay="" loop="" preload="">
+      <source src="sounds/route1.mp3" type="audio/mpeg"></source>
+      Your browser does not support the audio element.
+    </audio>
+    <div id="pokeballSounds">
+    </div>
       <div id="leftSidebar" ng-controller="MainCtrl">  
         <p>
         <div class="ids">
@@ -28,17 +35,17 @@
         </ul></p>
       </div>
         <div class="details" ng-controller="DetailsCtrl">
-            <h2 class="stats">Name: <span class="varStats">{{ name }}</span></h2><br>
-            <h2 class="stats">Attack Power: <span class="varStats">{{ attack }}</span></h2><br>
-            <h2 class="stats">Defense Power: <span class="varStats">{{ defense }}</span></h2>
+            <h2 class="stats" id="nameStat">Name: <span class="varStats">{{ name }}</span></h2><br>
+            <h2 class="stats" id="attackStat">Attack Power: <span class="varStats">{{ attack }}</span></h2><br>
+            <h2 class="stats" id="defenseStat">Defense Power: <span class="varStats">{{ defense }}</span></h2>
             <div class="popup">
               <div id="popupText"></div>  
-              <svg height="50" width="100">
+              <svg height="50" width="150">
                 <path d="M0 50 L40 0 L65 0 Z" />
                 Sorry, your browser does not support inline SVG.
               </svg>
             </div>
-            <img id="ash" src="img/ashSmall.png"/>
+            <img id="ash" src="img/ash.png"/>
         </div>
         <div id="rightSidebar">
           <div> 

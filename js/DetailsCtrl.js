@@ -8,5 +8,5 @@ angular.module('pokeApp').controller('DetailsCtrl', ['$scope', 'appFact', functi
       $scope.$apply();  // begin the "digestion" of new data
     }
   };
-  setInterval(setAttr, 1100); // setting continuous checking
+  setInterval(setAttr, 200); // setting continuous checking
 }]);

@@ -1,7 +1,6 @@
 HOW TO USE:
 
-  Fork and clone repo.  Do a "bower install" from the root directory, then open index.html in a
-  browser and enjoy!
+  Fork and clone repo.  Do a "bower install" from the root directory, then turn your speakers up, open index.html in a browser, and enjoy!
 
 
 # poké-test
