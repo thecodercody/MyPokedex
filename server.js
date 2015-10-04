@@ -15,7 +15,9 @@ app.get('*', function(req, res) {
   res.sendfile('./client/index.html');
 });
 
-app.listen(8080);
+var port = process.env.PORT || 8080;
+
+app.listen(port);
 console.log("App listening on port 8080");
 
 exports = module.exports = app;
