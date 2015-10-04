@@ -73,7 +73,7 @@ angular.module('pokeApp', ['ngRoute', 'ngAnimate'])
           }, 3500);
           setTimeout(function(){
             $('#spriteImages').addClass('spriteImages-grow');
-          }, 4320);
+          }, 3500);
           // paginate via national ID in the pokedex
           $('.ids').find('h2').text(appFact.pokemon.national_id);
         },
