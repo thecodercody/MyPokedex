@@ -227,8 +227,9 @@ p {
 .pageViewText {
   background-color: #3E5BA3;
   border: 2px solid #1D2D5E;
+  border-radius: 10px;
   color: #FECB2F;
-  font-size: 1.5em;
+  font-size: 20px;
   font-weight: bolder;
   height: 90px;
   margin: auto;
