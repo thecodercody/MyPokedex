@@ -113,6 +113,10 @@ body
   top: 6px;
 }
 
+.details {
+  height: 90px;
+}
+
 #homeLink {
   background-color: blue;
   border: 2px solid black;
@@ -181,6 +185,19 @@ body
  to {background-position: -400px 0;}
 };
 
+@keyframes slideInDown {
+    from    { transform:translateY(0); }
+    to      { transform: translateY(100%); }
+}
+
+.ng-enter {
+  animation: slideInDown .5s both ease-in;
+}
+
+.ng-leave {
+  display: none;
+}
+
 p {
   text-align: center;
 }
@@ -211,9 +228,9 @@ p {
   background-color: #3E5BA3;
   border: 2px solid #1D2D5E;
   color: #FECB2F;
-  font-size: 30px;
+  font-size: 1.5em;
   font-weight: bolder;
-  height: 150px;
+  height: 90px;
   margin: auto;
   text-align: center;
   width: 80%;
@@ -290,6 +307,15 @@ p {
   max-width: 30%;
 }
 
+#rolling {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -12%;
+  -webkit-transform: scale(0.4);
+  -ms-transform: scale(0.4);
+  transform: scale(0.4) rotate(90deg);
+}
 
 #search  {
   margin-left: 9px;
@@ -331,23 +357,23 @@ p {
     }
 }
 
-.sprites {
-  height: 96px;
+#sprites {
+  height: 80%;
   margin: auto;
-  width: 10%%;
+  width: 30%%;
 }
 
 #spriteImages {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .spriteImages-grow {
-  -webkit-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  transform: scale(1.5); 
+  -webkit-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+  transform: scale(1.8); 
   transition: .5s;
 }
 
@@ -360,6 +386,10 @@ p {
   margin: auto;
   text-align: left;
   width: 46%;
+}
+
+#technologies {
+  font-size: 20px;
 }
 
 #text {

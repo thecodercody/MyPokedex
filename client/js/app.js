@@ -3,7 +3,7 @@ String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-angular.module('pokeApp', ['ngRoute'])
+angular.module('pokeApp', ['ngRoute', 'ngAnimate'])
   
   // making an app-wide persistent object to attach data to
   .factory('appFact', function appFactory(){
@@ -60,11 +60,20 @@ angular.module('pokeApp', ['ngRoute'])
         contentType: 'application/json',
         success: function (data) {
           appFact.pokemon = data;
+          document.getElementById('spriteImages').src="";
+          document.getElementById('rolling').src="../img/pokeballRolling.gif";
+          setTimeout(function(){
+            document.getElementById('rolling').src="";
+            document.getElementById('spriteImages').src="../img/pokeballOpening.gif";
+          }, 2000);  
           $('#spriteImages').removeClass('spriteImages-grow');
-          document.getElementById('spriteImages').src="../img/pokemon/" + appFact.pokemon.national_id + ".png";
+          setTimeout(function(){
+            var path = 
+              document.getElementById('spriteImages').src="../img/pokemon/" + appFact.pokemon.national_id + ".gif";
+          }, 3500);
           setTimeout(function(){
             $('#spriteImages').addClass('spriteImages-grow');
-          }, 500);
+          }, 3500);
           // paginate via national ID in the pokedex
           $('.ids').find('h2').text(appFact.pokemon.national_id);
         },
