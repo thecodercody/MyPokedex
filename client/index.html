@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
     <title>Pokedex</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
@@ -40,12 +41,18 @@
           </li>
         </ul></p>
       </div>
-      <div ng-view></div>  
+      <div id="middle">  
+        <div ng-view></div>  
         <img id="ash" src="img/ash.png"/>
+      </div>
+        
         <div id="rightSidebar">
           <div> 
             <p><img id="logo" src="img/logo.png"/></p>
             <p><h3 id="text" class="right">No Pokemon were harmed in the making of this app</h3></p>
+            <a id="homeLink" class="pageLinks" href="/">Home</a>
+            <a id="aboutLink" class="pageLinks" href="/about">About</a>
+            <a id="contactLink" class="pageLinks" href="/contact">Contact</a>
           </div>
           <br>
           <br>

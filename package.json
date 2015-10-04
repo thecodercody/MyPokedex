@@ -1,0 +1,13 @@
+{
+  "name"         : "myPokedex",
+  "version"      : "1.0.0",
+  "description"  : "Pokemon API-call Single Page App",
+  "main"         : "server.js",
+  "author"       : "-thecodercody-",
+  "dependencies" : {
+    "express"    : "latest",
+    "morgan"     : "latest",
+    "body-parser": "latest",
+    "method-override": "latest"
+    }
+}
