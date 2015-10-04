@@ -5,9 +5,10 @@
   "main"         : "server.js",
   "author"       : "-thecodercody-",
   "dependencies" : {
-    "express"    : "latest",
-    "morgan"     : "latest",
     "body-parser": "latest",
-    "method-override": "latest"
+    "express"    : "latest",
+    "method-override": "latest",
+    "morgan"     : "latest",
+    "nodemon"    : "latest"
     }
 }

@@ -13,7 +13,7 @@ angular.module('pokeApp', ['ngRoute'])
   // gather pokedex
   .controller('MainCtrl', ['$scope', 'appFact', function($scope, appFact){
     $.ajax({
-    url: "//pokeapi.co/api/v1/pokedex/1/",
+    url: "http://pokeapi.co/api/v1/pokedex/1/",
     type: "GET",
     contentType: 'application/json',
     success: function (data) {
@@ -29,7 +29,6 @@ angular.module('pokeApp', ['ngRoute'])
 
     // when pokeballs are clicked, call function below
     $scope.pokemonDetails = function(poke){
-    
     // animations entering
       setTimeout(function(){ 
         $('#' + poke.name).addClass('pokeballs-opening');
@@ -38,7 +37,7 @@ angular.module('pokeApp', ['ngRoute'])
         $('.stats').addClass('shine-me');
       }, 200);
       $('#pokeballSounds').html('<audio autoplay=""><source src="sounds/pokeballOpen.mp3" type="audio/mpeg"></source></audio>');
-    
+      
     // animations exit
       setTimeout(function(){
         $('#' + poke.name).removeClass('pokeballs-opening');
@@ -56,11 +55,16 @@ angular.module('pokeApp', ['ngRoute'])
       // get individual pokemon data
       var uri = poke.resource_uri;
       $.ajax({
-        url: '//pokeapi.co/' + uri,
+        url: 'http://pokeapi.co/' + uri,
         type: "GET",
         contentType: 'application/json',
         success: function (data) {
           appFact.pokemon = data;
+          $('#spriteImages').removeClass('spriteImages-grow');
+          document.getElementById('spriteImages').src="../img/pokemon/" + appFact.pokemon.national_id + ".png";
+          setTimeout(function(){
+            $('#spriteImages').addClass('spriteImages-grow');
+          }, 500);
           // paginate via national ID in the pokedex
           $('.ids').find('h2').text(appFact.pokemon.national_id);
         },

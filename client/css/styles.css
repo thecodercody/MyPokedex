@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 
 @-webkit-keyframes swing
 {
@@ -329,6 +329,26 @@ p {
         background-repeat:no-repeat;
         background-position:250px 250px;
     }
+}
+
+.sprites {
+  height: 96px;
+  margin: auto;
+  width: 10%%;
+}
+
+#spriteImages {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.spriteImages-grow {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5); 
+  transition: .5s;
 }
 
 
