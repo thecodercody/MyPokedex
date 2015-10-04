@@ -68,12 +68,11 @@ angular.module('pokeApp', ['ngRoute', 'ngAnimate'])
           }, 2000);  
           $('#spriteImages').removeClass('spriteImages-grow');
           setTimeout(function(){
-            var path = 
               document.getElementById('spriteImages').src="../img/pokemon/" + appFact.pokemon.national_id + ".gif";
           }, 3500);
           setTimeout(function(){
             $('#spriteImages').addClass('spriteImages-grow');
-          }, 3500);
+          }, 3650);
           // paginate via national ID in the pokedex
           $('.ids').find('h2').text(appFact.pokemon.national_id);
         },
