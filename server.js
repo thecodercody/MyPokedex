@@ -1,11 +1,8 @@
 var express  = require('express');
-var app      = express();                               
-var mongoose = require('mongoose');                     
+var app      = express();                                       
 var morgan = require('morgan');             
 var bodyParser = require('body-parser');    
 var methodOverride = require('method-override');
-
-mongoose.connect('mongodb://root:xe9doZogig@apollo.modulusmongo.net:27017/i9notEji?autoReconnect=true&connectTimeoutMS=60000');
 
 app.use(express.static(__dirname + '/client'));                
 app.use(morgan('dev'));

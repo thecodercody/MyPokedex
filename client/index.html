@@ -34,7 +34,8 @@
         <ul class="pokedex" ng-if="q">
           <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
             <strong>{{ pokemon.name }}</strong>
-              <img id="{{pokemon.name}}" class="pokeballs" src="img/pokeball.png" ng-click="pokemonDetails(pokemon);">
+              <a href="/details">
+              <img id="{{pokemon.name}}" class="pokeballs" src="img/pokeball.png" ng-click="pokemonDetails(pokemon);"></a>
           </li>
           <li ng-if="results.length == 0">
             <strong>No results found...</strong>
@@ -50,9 +51,11 @@
           <div> 
             <p><img id="logo" src="img/logo.png"/></p>
             <p><h3 id="text" class="right">No Pokemon were harmed in the making of this app</h3></p>
+            <div id="links">
             <a id="homeLink" class="pageLinks" href="/">Home</a>
             <a id="aboutLink" class="pageLinks" href="/about">About</a>
             <a id="contactLink" class="pageLinks" href="/contact">Contact</a>
+            </div>
           </div>
           <br>
           <br>

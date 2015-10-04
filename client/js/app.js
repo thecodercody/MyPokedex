@@ -31,10 +31,12 @@ angular.module('pokeApp', ['ngRoute'])
     $scope.pokemonDetails = function(poke){
     
     // animations entering
-      $('#' + poke.name).addClass('pokeballs-opening');
-      $('#popupText').html(poke.name.capFirstLetter() + '<br><p>I choose YOU!</p>');
-      $('.popup').css({ "opacity": "1", "margin-left": "45px", "margin-top": "-220px" });
-      $('.stats').addClass('shine-me');
+      setTimeout(function(){ 
+        $('#' + poke.name).addClass('pokeballs-opening');
+        $('#popupText').html(poke.name.capFirstLetter() + '<br><p>I choose YOU!</p>');
+        $('.popup').css({ "opacity": "1", "margin-left": "45px", "margin-top": "-220px" });
+        $('.stats').addClass('shine-me');
+      }, 200);
       $('#pokeballSounds').html('<audio autoplay=""><source src="sounds/pokeballOpen.mp3" type="audio/mpeg"></source></audio>');
     
     // animations exit

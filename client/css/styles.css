@@ -67,6 +67,24 @@
     }
 }
 
+#aboutLink {
+  background-color: red;
+  border: 2px solid black;
+  color: white;
+  -webkit-box-shadow: 0px 9px 0px maroon, 0px 9px 25px rgba(0,0,0,.7);
+  -moz-box-shadow: 0px 9px 0px maroon, 0px 9px 25px rgba(0,0,0,.7);
+  box-shadow: 0px 9px 0px maroon, 0px 9px 25px rgba(0,0,0,.7);
+  text-shadow: 2px 1px black;
+}
+
+#aboutLink:active {
+  -webkit-box-shadow: 0px 3px 0px maroon, 0px 3px 6px rgba(0,0,0,.9);
+  -moz-box-shadow: 0px 3px 0px maroon, 0px 3px 6px rgba(0,0,0,.9);
+  box-shadow: 0px 3px 0px maroon, 0px 3px 6px rgba(0,0,0,.9);
+  position: rel;
+  top: 6px;
+}
+
 #ash {
   width: 100%;
 }
@@ -75,6 +93,42 @@ body
 {
   font-weight: bolder;
   overflow-x: hidden;
+}
+
+#contactLink {
+  background-color: yellow;
+  border: 2px solid black;
+  color: purple;
+  -webkit-box-shadow: 0px 9px 0px gold, 0px 9px 25px rgba(0,0,0,.3);
+  -moz-box-shadow: 0px 9px 0px gold, 0px 9px 25px rgba(0,0,0,.7);
+  box-shadow: 0px 9px 0px gold, 0px 9px 25px rgba(0,0,0,.7);
+  text-shadow: 1px 1px black;
+}
+
+#contactLink:active {
+  -webkit-box-shadow: 0px 3px 0px gold, 0px 3px 6px rgba(0,0,0,.9);
+  -moz-box-shadow: 0px 3px 0px gold, 0px 3px 6px rgba(0,0,0,.9);
+  box-shadow: 0px 3px 0px gold, 0px 3px 6px rgba(0,0,0,.9);
+  position: rel;
+  top: 6px;
+}
+
+#homeLink {
+  background-color: blue;
+  border: 2px solid black;
+  color: yellow;
+  -webkit-box-shadow: 0px 9px 0px navy, 0px 9px 25px rgba(0,0,0,.7);
+  -moz-box-shadow: 0px 9px 0px navy, 0px 9px 25px rgba(0,0,0,.7);
+  box-shadow: 0px 9px 0px navy, 0px 9px 25px rgba(0,0,0,.7);
+  text-shadow: 2px 1px black;
+}
+
+#homeLink:active {
+  -webkit-box-shadow: 0px 3px 0px navy, 0px 3px 6px rgba(0,0,0,.9);
+  -moz-box-shadow: 0px 3px 0px navy, 0px 3px 6px rgba(0,0,0,.9);
+  box-shadow: 0px 3px 0px navy, 0px 3px 6px rgba(0,0,0,.9);
+  position: rel;
+  top: 6px;
 }
 
 .ids h2 {
@@ -90,6 +144,11 @@ body
   background-image: url('../img/pokedex.png');
   background-repeat: no-repeat;
   height: 140px;
+}
+
+#links {
+  width: 80%;
+  margin: auto;
 }
 
 #logo {
@@ -128,22 +187,17 @@ p {
 
 .pageLinks{
   position: relative;
-  color: rgba(255,255,255,1);
   text-decoration: none;
-  background-color: rgba(219,87,5,1);
   font-family: 'Yanone Kaffeesatz';
   font-weight: 700;
-  font-size: 3em;
-  display: block;
+  font-size: 24px;
+  display: inline-block;
   padding: 4px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-  -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-  box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
   margin: 100px auto;
-  width: 160px;
+  width: 80px;
   text-align: center;
   
   -webkit-transition: all .1s ease;
@@ -152,6 +206,17 @@ p {
   -o-transition: all .1s ease;
   transition: all .1s ease;
 }
+
+.pageViewText {
+  background-color: #3E5BA3;
+  border: 2px solid #1D2D5E;
+  color: #FECB2F;
+  font-size: 30px;
+  font-weight: bolder;
+  height: 150px;
+  margin: auto;
+  text-align: center;
+  width: 80%;
 }
 
 .pokeballs {
