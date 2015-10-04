@@ -13,7 +13,7 @@ angular.module('pokeApp', ['ngRoute'])
   // gather pokedex
   .controller('MainCtrl', ['$scope', 'appFact', function($scope, appFact){
     $.ajax({
-    url: "http://pokeapi.co/api/v1/pokedex/1/",
+    url: "https://pokeapi.co/api/v1/pokedex/1/",
     type: "GET",
     contentType: 'application/json',
     success: function (data) {
@@ -56,7 +56,7 @@ angular.module('pokeApp', ['ngRoute'])
       // get individual pokemon data
       var uri = poke.resource_uri;
       $.ajax({
-        url: 'http://pokeapi.co/' + uri,
+        url: 'https://pokeapi.co/' + uri,
         type: "GET",
         contentType: 'application/json',
         success: function (data) {
