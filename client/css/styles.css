@@ -304,8 +304,9 @@ p {
 }
 
 #rightSidebar {
-  float: right;
+  position:fixed;
   max-width: 30%;
+  right: 0;
 }
 
 #rolling {
