@@ -37,6 +37,7 @@ angular.module('pokeApp', ['ngRoute', 'ngAnimate'])
         $('.stats').addClass('shine-me');
       }, 200);
       $('#pokeballSounds').html('<audio autoplay=""><source src="sounds/pokeballOpen.mp3" type="audio/mpeg"></source></audio>');
+      $('#iChooseYou').html('<audio autoplay=""><source src="sounds/iChooseYou.mp3" type="audio/mpeg"></source></audio>');
       
     // animations exit
       setTimeout(function(){
@@ -51,6 +52,10 @@ angular.module('pokeApp', ['ngRoute', 'ngAnimate'])
         $('.stats').removeClass('shine-me');
         $('#pokeballSounds').html('');
       }, 500);
+
+      setTimeout(function(){
+        $('#iChooseYou').html('');
+      }, 1700);
 
       // get individual pokemon data
       var uri = poke.resource_uri;
