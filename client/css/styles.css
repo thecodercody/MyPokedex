@@ -137,8 +137,8 @@ body
 
 .ids h2 {
   position: absolute;
-  top: 40px;
-  left: 28px;
+  top: 68px;
+  left: 32px;
   width: 100%;
 }
 
@@ -147,7 +147,7 @@ body
   float:left;
   background-image: url('../img/pokedex.png');
   background-repeat: no-repeat;
-  height: 140px;
+  height: 189px;
 }
 
 #links {
@@ -184,19 +184,6 @@ body
  from {background-position: 0 0;}
  to {background-position: -400px 0;}
 };
-
-@keyframes slideInDown {
-    from    { transform:translateY(0); }
-    to      { transform: translateY(100%); }
-}
-
-.ng-enter {
-  animation: slideInDown .5s both ease-in;
-}
-
-.ng-leave {
-  display: none;
-}
 
 p {
   text-align: center;
@@ -321,7 +308,7 @@ p {
 
 #search  {
   margin-left: 9px;
-  margin-top: 100px;
+  margin-top: 155px;
 }
 
 #signature {

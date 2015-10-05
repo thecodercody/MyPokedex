@@ -3,7 +3,7 @@ String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-angular.module('pokeApp', ['ngRoute', 'ngAnimate'])
+angular.module('pokeApp', ['ngRoute'])
   
   // making an app-wide persistent object to attach data to
   .factory('appFact', function appFactory(){
