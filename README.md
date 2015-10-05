@@ -1,6 +1,8 @@
 HOW TO USE:
 
-  Fork and clone repo.  Do a "bower install" from the root directory, then turn your speakers up, open index.html in a browser, and enjoy!
+  Fork and clone repo.  From the root directory on the command line do an "npm install" followed by a "bower install".  Then,start the server $node server.js, crank up your speakers, and navigate your browser to localhost:8080. Enjoy!
+
+  -thecodercody-
 
 
 # poké-test
