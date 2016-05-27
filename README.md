@@ -8,10 +8,7 @@ METHOD 1 - RUNNING LOCALLY
   -thecodercody-
 
 
-# poké-test
-Single Page app Using Pokémon API.  Please fork this repo, and create your app.  When you are done, create a Pull Request.
-
-# Requirements.
+I tried to do this:
 
 1. Using a JS Framework of your choosing - or none at all - create a single page app.
 2. Do NOT use a CSS framework - Bootstrap, Foundation etc...
