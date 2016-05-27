@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
     <title>Pokedex</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/DetailsCtrl.js"></script>
-    <script type="text/javascript" src="js/HomeCtrl.js"></script>
-    <script type="text/javascript" src="js/AboutCtrl.js"></script>
-    <script type="text/javascript" src="js/ContactCtrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="client/css/styles.css"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="client/img/favicon.ico"/>
+    <script type="text/javascript" src="client/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="client/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="client/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="client/js/app.js"></script>
+    <script type="text/javascript" src="client/js/DetailsCtrl.js"></script>
+    <script type="text/javascript" src="client/js/HomeCtrl.js"></script>
+    <script type="text/javascript" src="client/js/AboutCtrl.js"></script>
+    <script type="text/javascript" src="client/js/ContactCtrl.js"></script>
   </head>
   <body ng-app="pokeApp" ng-controller="MainCtrl">
     <audio autoplay="" loop="" preload="">
-      <source src="sounds/route1.mp3" type="audio/mpeg"></source>
+      <source src="client/sounds/route1.mp3" type="audio/mpeg"></source>
       Your browser does not support the audio element.
     </audio>
     <div id="pokeballSounds">
     </div>
     <div id="iChooseYou">
     </div>
+    <div id="mainWrapper">
       <div id="leftSidebar">  
         <p>
         <div class="ids">
@@ -38,7 +38,7 @@
           <li class="pokemon" ng-repeat="pokemon in pokedex | filter:q as results">
             <strong>{{ pokemon.name }}</strong>
               <a href="/details">
-              <img id="{{pokemon.name}}" class="pokeballs" src="img/pokeball.png" ng-click="pokemonDetails(pokemon);"></a>
+              <img id="{{pokemon.name}}" class="pokeballs" src="client/img/pokeball.png" ng-click="pokemonDetails(pokemon);"></a>
           </li>
           <li ng-if="results.length == 0">
             <strong>No results found...</strong>
@@ -47,11 +47,11 @@
       </div>
       <div id="middle">  
         <div ng-view></div>  
-        <img id="ash" src="img/ash.png"/>
+        <img id="ash" src="client/img/ash.png"/>
       </div>
         <div id="rightSidebar">
           <div> 
-            <p><img id="logo" src="img/logo.png"/></p>
+            <p><img id="logo" src="client/img/logo.png"/></p>
             <p><h3 id="text" class="right">No Pokemon were harmed in the making of this app</h3></p>
             <div id="links">
             <a id="homeLink" class="pageLinks" href="/">Home</a>
@@ -61,5 +61,7 @@
           </div>
           <p><h3 class="right" id="signature">-thecodercody-</h3></p>
         </div>
+      </div>
+     
   </body>
 </html>

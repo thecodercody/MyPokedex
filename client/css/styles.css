@@ -95,6 +95,11 @@ body
   overflow-x: hidden;
 }
 
+#mainWrapper {
+  height: 100%;
+  width: 100%;
+}
+
 #contactLink {
   background-color: yellow;
   border: 2px solid black;

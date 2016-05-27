@@ -1,3 +1,5 @@
+
+
 // modifying String prototype for first-letter capitalization
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
@@ -36,8 +38,8 @@ angular.module('pokeApp', ['ngRoute'])
         $('.popup').css({ "opacity": "1", "margin-left": "45px", "margin-top": "-220px" });
         $('.stats').addClass('shine-me');
       }, 200);
-      $('#pokeballSounds').html('<audio autoplay=""><source src="sounds/pokeballOpen.mp3" type="audio/mpeg"></source></audio>');
-      $('#iChooseYou').html('<audio autoplay=""><source src="sounds/iChooseYou.mp3" type="audio/mpeg"></source></audio>');
+      $('#pokeballSounds').html('<audio autoplay=""><source src="client/sounds/pokeballOpen.mp3" type="audio/mpeg"></source></audio>');
+      $('#iChooseYou').html('<audio autoplay=""><source src="client/sounds/iChooseYou.mp3" type="audio/mpeg"></source></audio>');
       
     // animations exit
       setTimeout(function(){
@@ -66,14 +68,14 @@ angular.module('pokeApp', ['ngRoute'])
         success: function (data) {
           appFact.pokemon = data;
           document.getElementById('spriteImages').src="";
-          document.getElementById('rolling').src="../img/pokeballRolling.gif";
+          document.getElementById('rolling').src="client/img/pokeballRolling.gif";
           setTimeout(function(){
             document.getElementById('rolling').src="";
-            document.getElementById('spriteImages').src="../img/pokeballOpening.gif";
+            document.getElementById('spriteImages').src="client/img/pokeballOpening.gif";
           }, 2000);  
           $('#spriteImages').removeClass('spriteImages-grow');
           setTimeout(function(){
-              document.getElementById('spriteImages').src="../img/pokemon/" + appFact.pokemon.national_id + ".gif";
+              document.getElementById('spriteImages').src="client/img/pokemon/" + appFact.pokemon.national_id + ".gif";
               $('#spriteImages').addClass('spriteImages-grow');
           }, 3500);
           // paginate via national ID in the pokedex
@@ -91,25 +93,25 @@ angular.module('pokeApp', ['ngRoute'])
 
       // landing page
       .when('/', {
-        templateUrl : '../pages/home.html',
+        templateUrl : 'client/pages/home.html',
         controller : 'homeController'
       })
 
       // details page
       .when('/details', {
-        templateUrl : "../pages/details.html",
+        templateUrl : "client/pages/details.html",
         controller : 'DetailsCtrl'
       })
 
       // about page
       .when('/about', {
-        templateUrl : '../pages/about.html',
+        templateUrl : 'client/pages/about.html',
         controller : 'aboutController'
       })
 
       // contact info
       .when('/contact', {
-        templateUrl : '../pages/contact.html',
+        templateUrl : 'client/pages/contact.html',
         controller : 'contactController'
       })
 
