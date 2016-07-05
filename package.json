@@ -1,5 +1,5 @@
 {
-  "name": "myPokedex",
+  "name": "codyspokedex",
   "version": "1.0.0",
   "description": "Pokemon API-call Single Page App",
   "main": "server.js",
