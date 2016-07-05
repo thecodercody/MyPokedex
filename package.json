@@ -1,14 +1,24 @@
 {
-  "name": "codyspokedex",
+  "name": "mypokedex",
   "version": "1.0.0",
-  "description": "Pokemon API-call Single Page App",
+  "description": "Single Page App Using Pokémon API",
   "main": "server.js",
   "author": "-thecodercody-",
   "dependencies": {
     "body-parser": "latest",
+    "bower": "1.6.5",
     "cookie-parser": "latest",
     "express": "latest",
     "method-override": "latest",
-    "nodemon": "latest"
+    "morgan": "latest",
+    "nodemon": "latest",
+    "path": "latest"
+  },
+    "engines": {
+    "node": "6.2.0"
+  },
+    "scripts": {
+    "start": "node server.js",
+    "postinstall": "bower install"
   }
 }
