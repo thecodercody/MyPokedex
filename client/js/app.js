@@ -15,7 +15,7 @@ angular.module('pokeApp', ['ngRoute'])
   // gather pokedex
   .controller('MainCtrl', ['$scope', 'appFact', function($scope, appFact){
     $.ajax({
-    url: "http://pokeapi.co/api/v1/pokedex/1/",
+    url: "https://pokeapi.co/api/v1/pokedex/1/",
     type: "GET",
     contentType: 'application/json',
     success: function (data) {
@@ -25,15 +25,18 @@ angular.module('pokeApp', ['ngRoute'])
       })
     },
     error: function(data) {
-      console.log('Error: Message not retrieved.');
+      console.log('Error: Could not capitalize!');
      }
     });
 
     // when pokeballs are clicked, call function below
     $scope.pokemonDetails = function(poke){
+    console.log("poke: " + Object.keys(poke));
+
     // animations entering
       setTimeout(function(){ 
         $('#' + poke.name).addClass('pokeballs-opening');
+        $('#rolling').attr('src', 'client/img/pokeballRolling.gif');
         $('#popupText').html(poke.name.capFirstLetter() + '<br><p>I choose YOU!</p>');
         $('.popup').css({ "opacity": "1", "margin-left": "45px", "margin-top": "-220px" });
         $('.stats').addClass('shine-me');
@@ -61,30 +64,46 @@ angular.module('pokeApp', ['ngRoute'])
 
       // get individual pokemon data
       var uri = poke.resource_uri;
+
+      uri = uri.split('/');
+      uri = uri[uri.length - 2];
+
       $.ajax({
-        url: 'http://pokeapi.co/' + uri,
-        type: "GET",
-        contentType: 'application/json',
-        success: function (data) {
-          appFact.pokemon = data;
-          document.getElementById('spriteImages').src="";
-          document.getElementById('rolling').src="client/img/pokeballRolling.gif";
+    url: "https://pokeapi.co/api/v2/pokemon/" + uri + "/",
+    type: "GET",
+    contentType: 'application/json',
+    success: function (data) {
+      $scope = data;
+      console.log($scope);
+      appFact.name = $scope.name;
+      appFact.name = appFact.name.capFirstLetter();
+      appFact.attack = $scope.stats[4].base_stat;
+      appFact.defense = $scope.stats[3].base_stat;
+      console.log(appFact);
+    },
+    error: function(data) {
+      console.log(data);
+      console.log('Error: Could not get individual Pokémon data!');
+     }
+    });
+
+      console.log('uri: ' +  uri);
+      
+          $('#spriteImages').attr('src', '');
+          $('#rolling').attr('src', 'client/img/pokeballRolling.gif');
           setTimeout(function(){
             document.getElementById('rolling').src="";
             document.getElementById('spriteImages').src="client/img/pokeballOpening.gif";
           }, 2000);  
           $('#spriteImages').removeClass('spriteImages-grow');
           setTimeout(function(){
-              document.getElementById('spriteImages').src="client/img/pokemon/" + appFact.pokemon.national_id + ".gif";
+              appFact = poke;
+              document.getElementById('spriteImages').src="client/img/pokemon/" + uri + ".gif";
               $('#spriteImages').addClass('spriteImages-grow');
           }, 3500);
           // paginate via national ID in the pokedex
-          $('.ids').find('h2').text(appFact.pokemon.national_id);
-        },
-        error: function(data) {
-          console.log('Error: Message not retrieved.');
-        }
-      });
+          $('.ids').find('h2').text(uri);
+    
     };
   }])
 
@@ -100,7 +119,7 @@ angular.module('pokeApp', ['ngRoute'])
       // details page
       .when('/details', {
         templateUrl : "client/pages/details.html",
-        controller : 'DetailsCtrl'
+        controller : 'detailsController'
       })
 
       // about page

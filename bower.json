@@ -1,11 +1,14 @@
 {
-  "name": "myPokedex",
+  "name": "mypokedex",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "latest",
-    "angular-route": "latest",
-    "bootstrap": "latest",
-    "jquery": "latest",
-    "underscore": "latest"
+    "angular": "*.*.*",
+    "angular-route": "*.*.*",
+    "bootstrap": "*.*",
+    "jquery": "*.*",
+    "underscore": "*.*"
+  },
+  "resolutions": {
+    "angular": "1.6.10"
   }
 }
